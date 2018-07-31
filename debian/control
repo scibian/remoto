@@ -1,0 +1,65 @@
+Source: remoto
+Section: python
+Priority: optional
+Maintainer: Scibian Project <packaging@scibian.org>
+Build-Depends:
+  debhelper (>= 9),
+  dh-python,
+  python-all,
+  python-execnet,
+  python-mock,
+  python-pytest,
+  python-setuptools,
+  python3-all,
+  python3-execnet,
+  python3-mock,
+  python3-pytest,
+  python3-setuptools
+Standards-Version: 3.9.8
+Homepage: https://github.com/alfredodeza/remoto
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.2
+Vcs-Git: https://github.com/scibian/remoto.git
+Vcs-Browser: https://github.com/scibian/remoto
+
+Package: python-remoto
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Suggests: python-remoto-doc
+Description: remote-command-executor using ssh and Python (Python 2)
+ All the heavy lifting is done by execnet, while this minimal API provides the
+ bare minimum to handle easy logging and connections from the remote end.
+ .
+ remoto is a bit opinionated as it was conceived to replace helpers and remote
+ utilities for ceph-deploy a tool to run remote commands to configure and setup
+ the distributed file system Ceph.
+ .
+ This package installs the library for Python 2.
+
+Package: python3-remoto
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Suggests: python-python-remoto-doc
+Description: remote-command-executor using ssh and Python (Python 3)
+ All the heavy lifting is done by execnet, while this minimal API provides the
+ bare minimum to handle easy logging and connections from the remote end.
+ .
+ remoto is a bit opinionated as it was conceived to replace helpers and remote
+ utilities for ceph-deploy a tool to run remote commands to configure and setup
+ the distributed file system Ceph.
+ .
+ This package installs the library for Python 3.
+
+Package: python-remoto-doc
+Architecture: all
+Section: doc
+Depends: ${sphinxdoc:Depends}, ${misc:Depends}
+Description: remote-command-executor using ssh and Python (common documentation)
+ All the heavy lifting is done by execnet, while this minimal API provides the
+ bare minimum to handle easy logging and connections from the remote end.
+ .
+ remoto is a bit opinionated as it was conceived to replace helpers and remote
+ utilities for ceph-deploy a tool to run remote commands to configure and setup
+ the distributed file system Ceph.
+ .
+ This is the common documentation package.
